@@ -113,7 +113,13 @@ option(USE_SYSTEM_SWIG "Build using an external version of SWIG" OFF)
 #option(USE_SYSTEM_Gadgetron "Build using an external version of Gadgetron" OFF)
 option(USE_SYSTEM_SIRF "Build using an external version of SIRF" OFF)
 option(USE_SYSTEM_GTest "Build using an external version of GTest" OFF)
-option(BUILD_STIR_WITH_OPENMP "Build STIR with OpenMP acceleration" OFF)
+option(USE_SYSTEM_ACE "Build using an external version of ACE" ON)
+if (APPLE)
+  set (build_STIR_OPENMP_default OFF)
+else()
+  set (build_STIR_OPENMP_default ON)
+endif()  
+option(BUILD_STIR_WITH_OPENMP "Build STIR with OpenMP acceleration" ${build_STIR_OPENMP_default})
 
 if (WIN32)
   set(build_Gadgetron_default OFF)
@@ -217,6 +223,15 @@ export SIRF_MATLAB_EXECUTABLE")
      setenv MATLABPATH ${MATLAB_DEST}\n\
    endif\n\
    setenv SIRF_MATLAB_EXECUTABLE ${Matlab_MAIN_PROGRAM}")
+endif()
+
+# set GADGETRON_HOME if Gadgetron is built
+if (BUILD_GADGETRON)
+
+  set(ENV_GADGETRON_HOME_SH "\
+GADGETRON_HOME=${CCPPETMR_INSTALL}\n\
+export GADGETRON_HOME\n")
+  set(ENV_GADGETRON_HOME_CSH "setenv GADGETRON_HOME ${CCPPETMR_INSTALL}\n")
 endif()
 
 configure_file(env_ccppetmr.sh.in ${CCPPETMR_INSTALL}/bin/env_ccppetmr.sh)
