@@ -43,7 +43,7 @@ if(NOT ( DEFINED "USE_SYSTEM_${externalProjName}" AND "${USE_SYSTEM_${externalPr
   message(STATUS "${__indent}Adding project ${proj}")
 
   ### --- Project specific additions here
-  set(libACE_Install_Dir ${SUPERBUILD_INSTALL_DIR})
+  set(ACE_Install_Dir ${SUPERBUILD_INSTALL_DIR})
 
   #message(STATUS "HDF5_ROOT in External_SIRF: " ${HDF5_ROOT})
   set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} ${SUPERBUILD_INSTALL_DIR})
@@ -60,12 +60,11 @@ if(NOT ( DEFINED "USE_SYSTEM_${externalProjName}" AND "${USE_SYSTEM_${externalPr
     DOWNLOAD_DIR ${${proj}_DOWNLOAD_DIR}
     STAMP_DIR ${${proj}_STAMP_DIR}
     TMP_DIR ${${proj}_TMP_DIR}
+    INSTALL_DIR ${ACE_Install_Dir}
 	
-    CMAKE_ARGS
-        -DCMAKE_INSTALL_PREFIX=${Gadgetron_Install_Dir}
-	    INSTALL_DIR ${Gadgetron_Install_Dir}
-    DEPENDS
-        ${${proj}_DEPENDENCIES}
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${ACE_Install_Dir}
+    DEPENDS ${${proj}_DEPENDENCIES}
+    INSTALL_COMMAND ""
   )
 
     set(${proj}_ROOT        ${${proj}_SOURCE_DIR})
