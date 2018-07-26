@@ -62,6 +62,7 @@ cmake ../SIRF-SuperBuild \
     -DUSE_SYSTEM_HDF5=ON \
     -DBUILD_siemens_to_ismrmrd=Off \
     -DUSE_SYSTEM_GTest=On\
+    -DUSE_SYSTEM_ACE=ON\
     -DCONDA_BUILD=On
 
 make  -j3 Gadgetron VERBOSE=0

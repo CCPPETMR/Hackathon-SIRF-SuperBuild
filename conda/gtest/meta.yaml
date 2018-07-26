@@ -44,15 +44,15 @@ requirements:
 #    - scipy
 #    - matplotlib
 #    - docopt
-    - boost >=1.63
-    - h5py
-    - psutil
-    - fftw
-    - libgcc-ng
-    - libstdcxx-ng
-    - openblas
-    - armadillo
-    - ismrmrd
+#    - boost >=1.63
+#    - h5py
+#    - psutil
+#    - fftw
+#    - libgcc-ng
+#    - libstdcxx-ng
+#    - openblas
+#    - armadillo
+#    - ismrmrd
 	
 about:
   home: http://www.ccppetmr.ac.uk

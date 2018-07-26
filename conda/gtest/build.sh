@@ -52,12 +52,12 @@ cmake ../SIRF-SuperBuild \
     -UGadgetron_TAG \
     -UISMRMRD_URL \
     -UISMRMRD_TAG \
-    -DBUILD_GADGETRON=On \
+    -DBUILD_GADGETRON=ON \
     -DUSE_SYSTEM_SWIG=On \
     -DUSE_SYSTEM_Boost=On \
     -DUSE_SYSTEM_Armadillo=On \
     -DUSE_SYSTEM_ISMRMRD=ON\
-    -DUSE_SYSTEM_STIR=Off\
+    -DUSE_SYSTEM_STIR=OFF\
     -DUSE_SYSTEM_FFTW3=On \
     -DUSE_SYSTEM_HDF5=ON \
     -DBUILD_siemens_to_ismrmrd=Off \

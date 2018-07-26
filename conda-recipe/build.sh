@@ -43,26 +43,29 @@ cmake ../SIRF-SuperBuild \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} \
     -DPYTHON_DEST_DIR=${PREFIX}/python\
     -USIRF_URL \
+    -DSIRF_URL=https://github.com/CCPPETMR/Hackathon-SIRF \
     -USIRF_TAG \
-    -DSIRF_TAG=a9170557c0f883934033700c1dd312a3a74611d6\
+    -DSIRF_TAG=origin/master\
     -USTIR_URL \
+    -DSTIR_URL=https://github.com/CCPPETMR/Hackathon-STIR \
     -USTIR_TAG \
+    -DSTIR_TAG=origin/master\
     -UGadgetron_URL \
     -UGadgetron_TAG \
     -UISMRMRD_URL \
     -UISMRMRD_TAG \
-    -DBUILD_GADGETRON=On \
+    -DBUILD_GADGETRON=OFF \
     -DUSE_SYSTEM_SWIG=On \
-    -DUSE_SYSTEM_Boost=Off \
+    -DUSE_SYSTEM_Boost=On \
     -DUSE_SYSTEM_Armadillo=On \
     -DUSE_SYSTEM_FFTW3=On \
     -DUSE_SYSTEM_HDF5=ON \
     -DBUILD_siemens_to_ismrmrd=On \
-    -DUSE_SYSTEM_GTEST=On\
+    -DUSE_SYSTEM_GTest=On\
+    -DUSE_SYSTEM_ACE=On\
     -DCONDA_BUILD=On
 
-make -j1
-cp ${PREFIX}/share/gadgetron/config/gadgetron.xml.example ${PREFIX}/share/gadgetron/config/gadgetron.xml
+make -j1 VERBOSE=1
 
 cd ${PREFIX}/python
 ${PYTHON} setup.py install
