@@ -52,7 +52,7 @@ cmake ../SIRF-SuperBuild \
     -UGadgetron_TAG \
     -UISMRMRD_URL \
     -UISMRMRD_TAG \
-    -DBUILD_GADGETRON=On \
+    -DBUILD_GADGETRON=OFF \
     -DUSE_SYSTEM_SWIG=On \
     -DUSE_SYSTEM_Boost=On \
     -DUSE_SYSTEM_Armadillo=On \
@@ -64,7 +64,7 @@ cmake ../SIRF-SuperBuild \
     -DUSE_SYSTEM_GTest=On\
     -DCONDA_BUILD=On
 
-make  -j1 Gadgetron
+make  -j1 STIR
 
 #cp ${PREFIX}/share/gadgetron/config/gadgetron.xml.example ${PREFIX}/share/gadgetron/config/gadgetron.xml
 

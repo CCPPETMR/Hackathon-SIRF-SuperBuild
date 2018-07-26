@@ -1,7 +1,7 @@
 package:
-  name: gadgetron
+  name: stir
 #  version: {{ environ['SIRF_VERSION'] }}
-  version: e7eb430673eb3272e8a821b51750c0a2a96dafed
+  version: 9ecbf0abd048cd0a8f19250f6cc7b4c199870c26
 
 
 build:
@@ -28,11 +28,11 @@ requirements:
     - psutil
     - nose
     - coverage
-    - fftw
+#    - fftw
     - swig >=3
 #    - libxslt
-    - armadillo
-    - gtest
+#    - armadillo
+#    - gtest
     - ismrmrd
 
 
@@ -51,10 +51,10 @@ requirements:
     - fftw
     - libgcc-ng
     - libstdcxx-ng
-    - openblas
-    - armadillo
-    - gtest
-    - ismrmrd
+#    - openblas
+#    - armadillo
+#    - gtest
+#    - ismrmrd
 	
 about:
   home: http://www.ccppetmr.ac.uk
