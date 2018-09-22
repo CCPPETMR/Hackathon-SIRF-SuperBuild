@@ -118,8 +118,17 @@ if (DEVEL_BUILD)
   set(DEFAULT_ACE_URL https://github.com/paskino/libace-conda)
   set(DEFAULT_ACE_TAG origin/master)
 
+  # CCPi CIL
+  set(DEFAULT_CCPi-Framework_URL https://github.com/vais-ral/CCPi-Framework.git)
+  set(DEFAULT_CCPi-Framework_TAG origin/master)
+  set(DEFAULT_CCPi-RGL_URL https://github.com/vais-ral/CCPi-Regularisation-Toolkit.git)
+  set(DEFAULT_CCPi-RGL_TAG origin/master)
+  set(DEFAULT_CCPi-FrameworkPlugins_URL https://github.com/vais-ral/CCPi-FrameworkPlugins.git)
+  set(DEFAULT_CCPi-FrameworkPlugins_TAG origin/master)
+
 else()
-  set(DEFAULT_SIRF_TAG v1.1.1)
+  set(DEFAULT_SIRF_URL https://github.com/CCPPETMR/Hackathon-SIRF )
+  set(DEFAULT_SIRF_TAG origin/convert_spdhg_to_cil)
 
   ## STIR
   set(DEFAULT_STIR_URL https://github.com/UCL/STIR )
@@ -150,6 +159,15 @@ else()
 
   set(DEFAULT_ACE_URL https://github.com/paskino/libace-conda)
   set(DEFAULT_ACE_TAG origin/master)
+  
+  # CCPi CIL
+  set(DEFAULT_CCPi-Framework_URL https://github.com/vais-ral/CCPi-Framework.git)
+  set(DEFAULT_CCPi-Framework_TAG origin/master)
+  set(DEFAULT_CCPi-RGL_URL https://github.com/vais-ral/CCPi-Regularisation-Toolkit.git)
+  set(DEFAULT_CCPi-RGL_TAG origin/master)
+  set(DEFAULT_CCPi-FrameworkPlugins_URL https://github.com/vais-ral/CCPi-FrameworkPlugins.git)
+  set(DEFAULT_CCPi-FrameworkPlugins_TAG origin/master)
+
 endif()
 
 
@@ -179,9 +197,20 @@ SET(glog_TAG ${DEFAULT_glog_TAG} CACHE STRING ON)
 set(ACE_URL ${DEFAULT_ACE_URL} CACHE STRING ON)
 set(ACE_TAG ${DEFAULT_ACE_TAG} CACHE STRING ON)
 
+set(CCPi-RGL_URL ${DEFAULT_CCPi-RGL_URL} CACHE STRING ON)
+set(CCPi-RGL_TAG ${DEFAULT_CCPi-RGL_TAG} CACHE STRING ON)
+set(CCPi-Framework_URL ${DEFAULT_CCPi-Framework_URL} CACHE STRING ON)
+set(CCPi-Framework_TAG ${DEFAULT_CCPi-Framework_TAG} CACHE STRING ON)
+set(CCPi-FrameworkPlugins_URL ${DEFAULT_CCPi-FrameworkPlugins_URL} CACHE STRING ON)
+set(CCPi-FrameworkPlugins_TAG ${DEFAULT_CCPi-FrameworkPlugins_TAG} CACHE STRING ON)
+
 mark_as_advanced(SIRF_URL SIRF_TAG STIR_URL STIR_TAG
   Gadgetron_URL Gadgetron_TAG
   siemens_to_ismrmrd_URL siemens_to_ismrmrd_TAG
   ISMRMRD_URL ISMRMRD_TAG
   petmr_rd_tools_URL petmr_rd_tools_TAG
-  glog_URL glog_TAG)
+  glog_URL glog_TAG
+  CCPi-Framework_URL CCPi-Framework_TAG
+  CCPi-FrameworkPlugins_URL CCPi-FrameworkPlugins_TAG
+  CCPi-RGL_URL CCPi-RGL_TAG
+)

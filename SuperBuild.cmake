@@ -158,6 +158,13 @@ if (BUILD_petmr_rd_tools)
   list(APPEND ${PRIMARY_PROJECT_NAME}_DEPENDENCIES petmr_rd_tools)
 endif()
 
+if ("${PYTHON_STRATEGY}" STREQUAL "CONDA")
+  set (BUILD_CIL OFF)
+endif()
+if (BUILD_CIL)
+  list(APPEND ${PRIMARY_PROJECT_NAME}_DEPENDENCIES CCPi-RGL CCPi-Framework CCPi-FrameworkPlugins)
+endif()
+
 ExternalProject_Include_Dependencies(${proj} DEPENDS_VAR ${PRIMARY_PROJECT_NAME}_DEPENDENCIES)
 
 message(STATUS "")
